@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+
+.outer-box {
+	width: 450px;
+	height: 650px; /* Set a fixed width */
+	padding: 20px; /* Space inside the box */
+	margin: 50px auto; /* Center the box horizontally with vertical space */
+	background-color: white;
+	color: rgba(0, 0, 0, 0.627); /* Light background color */
+	border: 1px solid #ccc; /* Light border */
+	border-radius: 10px; /* Rounded corners */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.heading {
+	margin-top: 30px;
+	margin-bottom: 40px;
+	margin-left: 20px;
+}
+
+.input-data {
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+}
+
+input {
+	width: 100%; /* Full width of the container */
+	padding: 12px; /* Inner spacing for the input */
+	border: 1px solid #ccc; /* Input border */
+	border-radius: 5px; /* Rounded corners for inputs */
+	font-size: 14px; /* Font size */
+	margin: 10px;
+	transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+.gender-div {
+	margin: 15px 0;
+	margin-left: 50px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+}
+.gender-div label {
+	display: flex; /* Use flex to align items horizontally */
+	align-items: center;
+	margin: 10px 0; /* Adds spacing between labels */
+	font-size: 14px; /* Font size for the labels */
+	cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.gender-div input[type="radio"] {
+	margin-right: 8px; /* Adds space between radio button and label */
+	accent-color: #007bff; /* Changes the color of the radio button */
+}
+
+.campus-data {
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	position: relative;
+}
+.campus-label {
+	position: absolute;
+	top: -9px; /* Adjust this to position the label */
+	left: 25px; /* Adjust for horizontal positioning */
+	background-color: white; /* Match the dropdown background */
+	padding: 0 5px; /* Optional: Add some padding for aesthetics */
+	font-size: 12px; /* Match the dropdown font size */
+	color: #555; /* Change color as needed */
+}
+
+.campus-select {
+	margin-top: -7px;
+	margin-left: 8px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	transition: border-color 0.3s, box-shadow 0.3s;
+	width: 98%;
+}
+
+.checkbox-label {
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+	margin-top: 35px;
+	font-size: 14px;
+
+	align-items: center;
+}
+.checkbox-input {
+	width: 20px;
+}
+
+.button-div {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+button {
+	width: 50%; /* Full width of the container */
+	padding: 12px; /* Inner spacing */
+	background-color: #007bff; /* Primary button color */
+	color: white; /* Text color */
+	border: none; /* Remove default border */
+	border-radius: 5px; /* Rounded corners */
+	font-size: 16px; /* Font size */
+	cursor: pointer; /* Pointer cursor on hover */
+	transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+}
+
+/* Hover effect */
+button:hover {
+	background-color: #0056b3; /* Darker color on hover */
+	transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Active effect */
+button:active {
+	background-color: #004494; /* Even darker color when pressed */
+	transform: translateY(0); /* Reset lift effect */
+}
+
+.radio-div {
+	display: flex;
+	flex-direction: column;
+}
+
+.ellipsis-indicator {
+	text-align: center; /* Center align */
+	font-size: 34px; /* Increase size */
+	margin-top: 20px; /* Space above */
+	opacity: 0.8; /* Slightly transparent */
+}

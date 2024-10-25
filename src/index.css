@@ -1,0 +1,10 @@
+body {
+	margin: 0; /* Remove default margin */
+	height: 100vh; /* Full viewport height */
+	background: linear-gradient(#2e3192, #1bffff); /* Your gradient here */
+	display: flex; /* Center content if needed */
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+	color: white; /* Text color for visibility */
+	font-family: "Roboto", sans-serif;
+}
