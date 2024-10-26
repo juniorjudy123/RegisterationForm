@@ -11,7 +11,8 @@ const Mainform = () => {
 	const [error, setError] = useState()
 
 	const validateEmail = (email) => {
-		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+		const emailPattern =
+			/^(?!.*\.{2})(?!.*@.*\.{2})[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 		return emailPattern.test(email)
 	}
 
