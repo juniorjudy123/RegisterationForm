@@ -1,19 +1,26 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import "./mainformStyles.css"
+import ErrorMessage from "../errorMessage/ErrorMessage"
 
 const Mainform = () => {
-	const [name, SetName] = useState("")
-	const [email, SetEmail] = useState("")
-	const [mobile, SetMobile] = useState("")
+	const [name, setName] = useState("")
+	const [email, setEmail] = useState("")
+	const [mobile, setMobile] = useState("")
 	const [gender, setGender] = useState("")
 	const [campus, setCampus] = useState("")
 	const [checked, setChecked] = useState(false)
-	const [error, setError] = useState()
+	const [emailError, setEmailError] = useState("")
+	const [mobileError, setMobileError] = useState("")
 
 	const validateEmail = (email) => {
 		const emailPattern =
 			/^(?!.*\.{2})(?!.*@.*\.{2})[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 		return emailPattern.test(email)
+	}
+
+	const validateMobile = (mobile) => {
+		const mobilePattern = /^\d{10}$/
+		return mobilePattern.test(mobile)
 	}
 
 	const handleGenderChange = (e) => {
@@ -24,37 +31,47 @@ const Mainform = () => {
 		setCampus(e.target.value)
 	}
 
-	const handleChecked = (prev) => {
-		setChecked((prev) => !prev)
+	const handleChecked = (e) => {
+		setChecked(e.target.checked)
 	}
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+		setEmailError("") // Reset error messages
+		setMobileError("")
+
 		const emailError = validateEmail(email) ? "" : "Invalid email format"
+		const mobileError = validateMobile(mobile)
+			? ""
+			: "Mobile number must be 10 digits"
 
 		if (emailError) {
-			setError({ email: emailError })
+			setEmailError(emailError)
 		}
 
-		console.log({ name, email, mobile, gender, campus, checked })
+		if (mobileError) {
+			setMobileError(mobileError)
+		}
+
+		if (!emailError && !mobileError) {
+			console.log({ name, email, mobile, gender, campus, checked })
+		}
 	}
 
 	return (
 		<div className="outer-box">
 			<form onSubmit={handleSubmit}>
 				<div className="heading-div">
-					<h1 className="heading">Registeration Form</h1>
+					<h1 className="heading">Registration Form</h1>
 				</div>
 				<div className="input-data">
 					<input
-						type="name"
-						placeholder="FullName"
+						type="text"
+						placeholder="Full Name"
 						value={name}
-						onChange={(e) => {
-							SetName(e.target.value)
-						}}
+						onChange={(e) => setName(e.target.value)}
 						required
-					></input>
+					/>
 				</div>
 				<div className="input-data">
 					<input
@@ -62,21 +79,19 @@ const Mainform = () => {
 						placeholder="Email"
 						required
 						value={email}
-						onChange={(e) => {
-							SetEmail(e.target.value)
-						}}
-					></input>
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<ErrorMessage message={emailError} />
 				</div>
 				<div className="input-data">
 					<input
 						type="tel"
-						placeholder="+91"
+						placeholder="Mobile Number"
 						required
 						value={mobile}
-						onChange={(e) => {
-							SetMobile(e.target.value)
-						}}
-					></input>
+						onChange={(e) => setMobile(e.target.value)}
+					/>
+					<ErrorMessage message={mobileError} />
 				</div>
 
 				<div className="gender-div">
@@ -123,7 +138,9 @@ const Mainform = () => {
 						onChange={handleCampusSelect}
 						required
 					>
-						<option value=""></option>
+						<option value="" disabled>
+							Select a campus
+						</option>
 						<option value="Ernakulam">Ernakulam</option>
 						<option value="Chennai">Chennai</option>
 						<option value="Bengaluru">Bengaluru</option>
@@ -136,7 +153,7 @@ const Mainform = () => {
 						type="checkbox"
 						name="updates"
 						className="checkbox-input"
-						value={checked}
+						checked={checked}
 						onChange={handleChecked}
 						required
 					/>
@@ -145,7 +162,7 @@ const Mainform = () => {
 
 				<div className="button-div">
 					<button className="submit" disabled={!checked}>
-						submit
+						Submit
 					</button>
 				</div>
 				<div className="ellipsis-indicator">...</div>
