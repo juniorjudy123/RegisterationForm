@@ -8,22 +8,12 @@ const Mainform = () => {
 	const [gender, setGender] = useState("")
 	const [campus, setCampus] = useState("")
 	const [checked, setChecked] = useState(false)
+	const [error, setError] = useState()
 
-	useEffect(() => {
-		console.log(name)
-	}, [name])
-	useEffect(() => {
-		console.log(email)
-	}, [email])
-	useEffect(() => {
-		console.log(mobile)
-	}, [mobile])
-	useEffect(() => {
-		console.log(gender)
-	}, [gender])
-	useEffect(() => {
-		console.log(campus)
-	}, [campus])
+	const validateEmail = (email) => {
+		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+		return emailPattern.test(email)
+	}
 
 	const handleGenderChange = (e) => {
 		setGender(e.target.value)
@@ -31,7 +21,6 @@ const Mainform = () => {
 
 	const handleCampusSelect = (e) => {
 		setCampus(e.target.value)
-		console.log(campus)
 	}
 
 	const handleChecked = (prev) => {
@@ -40,6 +29,12 @@ const Mainform = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+		const emailError = validateEmail(email) ? "" : "Invalid email format"
+
+		if (emailError) {
+			setError({ email: emailError })
+		}
+
 		console.log({ name, email, mobile, gender, campus, checked })
 	}
 
