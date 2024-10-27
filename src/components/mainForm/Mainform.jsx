@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./mainformStyles.css"
 import ErrorMessage from "../errorMessage/ErrorMessage"
+import { URL } from "../constants/utils"
 
 const Mainform = () => {
 	const [name, setName] = useState("")
@@ -35,7 +36,7 @@ const Mainform = () => {
 		setChecked(e.target.checked)
 	}
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
 		setEmailError("") // Reset error messages
 		setMobileError("")
@@ -47,14 +48,43 @@ const Mainform = () => {
 
 		if (emailError) {
 			setEmailError(emailError)
+			return // Early exit if there's an email error
 		}
 
 		if (mobileError) {
 			setMobileError(mobileError)
+			return // Early exit if there's a mobile error
 		}
 
-		if (!emailError && !mobileError) {
-			console.log({ name, email, mobile, gender, campus, checked })
+		console.log({ name, email, mobile, gender, campus, checked })
+
+		const data = {
+			name,
+			email,
+			mobile,
+			gender,
+			campus,
+			formchecked: checked,
+		}
+
+		try {
+			const response = await fetch(`${URL}`, {
+				method: "POST",
+				headers: {
+					Accept: "application/json",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			})
+
+			if (!response.ok) {
+				throw new Error("Network response was not ok")
+			}
+
+			const result = await response.json() // Assuming your server returns JSON
+			console.log(result) // Handle the response as needed
+		} catch (error) {
+			console.error("Error submitting form:", error)
 		}
 	}
 
