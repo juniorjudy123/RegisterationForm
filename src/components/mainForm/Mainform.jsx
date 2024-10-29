@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./mainformStyles.css"
 import ErrorMessage from "../errorMessage/ErrorMessage"
 import { URL } from "../constants/utils"
+import { useNavigate } from "react-router-dom"
 
 const Mainform = () => {
 	const [name, setName] = useState("")
@@ -12,6 +13,7 @@ const Mainform = () => {
 	const [checked, setChecked] = useState(false)
 	const [emailError, setEmailError] = useState("")
 	const [mobileError, setMobileError] = useState("")
+	const navigate = useNavigate()
 
 	const validateEmail = (email) => {
 		const emailPattern =
@@ -83,6 +85,8 @@ const Mainform = () => {
 
 			const result = await response.json() // Assuming your server returns JSON
 			console.log(result) // Handle the response as needed
+			//navigate to the edit page
+			navigate("/edit")
 		} catch (error) {
 			console.error("Error submitting form:", error)
 		}
@@ -97,6 +101,7 @@ const Mainform = () => {
 				<div className="input-data">
 					<input
 						type="text"
+						className="input-field"
 						placeholder="Full Name"
 						value={name}
 						onChange={(e) => setName(e.target.value)}
@@ -107,6 +112,7 @@ const Mainform = () => {
 					<input
 						type="email"
 						placeholder="Email"
+						className="input-field"
 						required
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
@@ -118,6 +124,7 @@ const Mainform = () => {
 						type="tel"
 						placeholder="Mobile Number"
 						required
+						className="input-field"
 						value={mobile}
 						onChange={(e) => setMobile(e.target.value)}
 					/>

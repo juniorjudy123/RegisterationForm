@@ -1,22 +1,3 @@
-// import Mainform from "./components/mainForm/Mainform"
-// import { StrictMode } from "react"
-// import { createRoot } from "react-dom/client"
-// import "./index.css"
-
-// function App() {
-// 	return (
-// 		<>
-// 			<Mainform />
-// 		</>
-// 	)
-// }
-
-// createRoot(document.getElementById("root")).render(
-// 	<StrictMode>
-// 		<App />
-// 	</StrictMode>
-// )
-
 //routing changes
 import Mainform from "./components/mainForm/Mainform"
 import { StrictMode } from "react"

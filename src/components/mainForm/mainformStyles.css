@@ -2,8 +2,7 @@
 
 .outer-box {
 	width: 450px;
-	/* height: 650px; Set a fixed width */
-	padding: 20px; /* Space inside the box */
+	padding: 15px; /* Space inside the box */
 	margin: 50px auto; /* Center the box horizontally with vertical space */
 	background-color: white;
 	color: rgba(0, 0, 0, 0.627); /* Light background color */
@@ -12,48 +11,48 @@
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.heading {
-	margin-top: 30px;
+.heading-div {
+	margin-top: 20px;
 	margin-bottom: 40px;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 
 .input-data {
 	display: flex;
-	flex-direction: row;
-	margin: 10px;
+	margin: 12px;
 }
 
-input {
+.input-field {
+	/* box-sizing: border-box; */
 	width: 100%; /* Full width of the container */
-	padding: 12px; /* Inner spacing for the input */
+	padding: 10px; /* Inner spacing for the input */
 	border: 1px solid #ccc; /* Input border */
 	border-radius: 5px; /* Rounded corners for inputs */
 	font-size: 14px; /* Font size */
-	margin: 10px;
+	margin: 5px;
 	transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
 }
 .gender-div {
-	margin: 15px 0;
-	margin-left: 50px;
 	margin-bottom: 20px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 25px;
 }
 .gender-div label {
-	display: flex; /* Use flex to align items horizontally */
+	display: flex;
 	align-items: center;
-	margin: 10px 0; /* Adds spacing between labels */
+	margin: 10px 0; /* Adds spacing between labels*/
 	font-size: 14px; /* Font size for the labels */
 	cursor: pointer; /* Changes cursor to pointer on hover */
 }
 .gender-div input[type="radio"] {
-	margin-right: 8px; /* Adds space between radio button and label */
+	margin-right: 5px; /* Adds space between radio button and label */
 	accent-color: #007bff; /* Changes the color of the radio button */
 }
 
 .campus-data {
-	margin: 10px;
+	margin: 5px;
 	display: flex;
 	flex-direction: column;
 	padding: 5px;
@@ -72,7 +71,7 @@ input {
 .campus-select {
 	margin-top: -7px;
 	margin-left: 8px;
-	padding: 12px;
+	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	font-size: 14px;
@@ -94,13 +93,14 @@ input {
 }
 
 .button-div {
-	margin-top: 50px;
+	margin-top: 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-button {
-	width: 50%; /* Full width of the container */
+
+.submit {
+	width: 100%; /* Full width of the container */
 	padding: 12px; /* Inner spacing */
 	background-color: #007bff; /* Primary button color */
 	color: white; /* Text color */
@@ -131,6 +131,6 @@ button:active {
 .ellipsis-indicator {
 	text-align: center; /* Center align */
 	font-size: 34px; /* Increase size */
-	margin-top: 20px; /* Space above */
+	margin-top: 10px; /* Space above */
 	opacity: 0.8; /* Slightly transparent */
 }
