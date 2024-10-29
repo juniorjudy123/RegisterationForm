@@ -1,0 +1,63 @@
+.outer-container {
+	width: 500px;
+	padding: 20px; /* Space inside the box */
+	margin: 50px auto; /* Center the box horizontally with vertical space */
+	background-color: white;
+	color: rgba(0, 0, 0, 0.627); /* Light background color */
+	border: 1px solid #ccc; /* Light border */
+	border-radius: 10px; /* Rounded corners */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.input-data {
+	display: flex;
+	align-items: center; /* Aligns items vertically centered */
+	margin-bottom: 10px; /* Space between input fields */
+	flex-direction: row;
+}
+
+.input-data label {
+	flex: 0 100px; /* Fixed width for label */
+}
+
+.input-data input {
+	flex: 1; /* Input takes the remaining space */
+	padding: 8px; /* Padding for the input */
+	border: 1px solid #ccc; /* Border for the input */
+	border-radius: 4px; /* Rounded corners */
+}
+
+.heading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5px;
+	padding: 5px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.note-msg {
+	color: red;
+}
+.caution-msg {
+	color: rgba(169, 169, 169, 0.942);
+}
+
+.button-container {
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+	padding: 10px;
+}
+
+button {
+	width: 50%;
+	margin: 5px;
+	padding: 12px; /* Inner spacing */
+	background-color: #007bff; /* Primary button color */
+	color: white; /* Text color */
+	border: none; /* Remove default border */
+	border-radius: 5px; /* Rounded corners */
+	font-size: 16px; /* Font size */
+	cursor: pointer; /* Pointer cursor on hover */
+	transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+}

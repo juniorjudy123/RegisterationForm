@@ -2,7 +2,7 @@
 
 .outer-box {
 	width: 450px;
-	height: 650px; /* Set a fixed width */
+	/* height: 650px; Set a fixed width */
 	padding: 20px; /* Space inside the box */
 	margin: 50px auto; /* Center the box horizontally with vertical space */
 	background-color: white;
