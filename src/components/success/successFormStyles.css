@@ -1,0 +1,95 @@
+#card {
+	position: relative;
+	width: 400px;
+	display: block;
+	margin: 40px auto;
+	text-align: center;
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+#upper-side {
+	padding: 4em;
+	background-color: #8bc34a;
+	display: block;
+	color: #fff;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+#status {
+	font-weight: lighter;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1em;
+	margin-top: -0.2em;
+	margin-bottom: 0;
+}
+
+#lower-side {
+	padding: 4em 2em 5em 2em;
+	background: #fff;
+	display: block;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+#message {
+	margin-top: -0.5em;
+	color: #757575;
+	letter-spacing: 1px;
+}
+#contBtn {
+	position: relative;
+	top: 1.5em;
+	text-decoration: none;
+	background: #8bc34a;
+	color: #fff;
+	margin: auto;
+	padding: 0.8em 3em;
+	-webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	-moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+	border-radius: 25px;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#contBtn:hover {
+	-webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	-moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.icon-check {
+	font-size: 3em !important; /* Increase the size of the icon */
+	color: white;
+	padding: 5px;
+	margin-right: 10px;
+	margin-bottom: 20px; /* Space between the icon and any text */
+	transition: transform 0.2s; /* Smooth transition effect on hover */
+}
+
+.icon-check:hover {
+	transform: scale(1.5); /* Slightly enlarge the icon on hover */
+}
+#message {
+	font-size: 0.9em; /* Adjust font size */
+	color: #333; /* Change text color */
+	text-align: center; /* Center the text */
+	margin: 10px auto; /* Add margin for spacing */
+	padding: 10px; /* Add padding for spacing */
+	max-width: 400px; /* Limit the width for better readability */
+}
+#message1 {
+	font-size: 1.2em; /* Adjust font size */
+	color: #333; /* Change text color */
+	text-align: center; /* Center the text */
+	margin: 10px auto; /* Add margin for spacing */
+	padding: 10px; /* Add padding for spacing */
+	max-width: 400px; /* Limit the width for better readability */
+}

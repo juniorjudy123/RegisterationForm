@@ -35,11 +35,36 @@
 	padding: 5px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.note-msg {
-	color: red;
+.welcome-message {
+	font-size: 2em; /* Larger font size for emphasis */
+	color: #2c3e50; /* A dark, rich color for the text */
+	text-align: center; /* Center the text for a balanced look */
+	margin: 20px 0; /* Add space above and below */
+	padding: 10px; /* Padding for better spacing */
+	background-color: #ecf0f1; /* Light background color for contrast */
+	border-radius: 10px; /* Rounded corners for a softer appearance */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	transition: transform 0.2s; /* Smooth transition effect */
 }
+
+.welcome-message:hover {
+	transform: scale(1.05); /* Slightly enlarge on hover for interaction */
+}
+
 .caution-msg {
-	color: rgba(169, 169, 169, 0.942);
+	font-size: 0.9em; /* Slightly larger text for emphasis */
+	color: #c0392b; /* A strong red color for attention */
+	background-color: #f8d7da; /* Light red background for a subtle highlight */
+	padding: 10px 15px; /* Add padding for breathing room */
+	border: 1px solid #f5c6cb; /* A border that matches the background */
+	border-radius: 5px; /* Rounded corners for a softer look */
+	margin: 20px 0; /* Space above and below the message */
+	line-height: 1.5; /* Improved line spacing for readability */
+}
+
+.note-msg {
+	font-weight: bold; /* Bold text for the note */
+	color: #c0392b; /* Same color as the caution message */
 }
 
 .button-container {

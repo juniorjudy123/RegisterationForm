@@ -2,18 +2,27 @@ import React, { useState } from "react"
 import "./mainformStyles.css"
 import ErrorMessage from "../errorMessage/ErrorMessage"
 import { URL } from "../constants/utils"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const Mainform = () => {
-	const [name, setName] = useState("")
-	const [email, setEmail] = useState("")
-	const [mobile, setMobile] = useState("")
-	const [gender, setGender] = useState("")
-	const [campus, setCampus] = useState("")
+	const location = useLocation()
+	const {
+		name: initialName,
+		email: initialEmail,
+		mobile: initialPhone,
+		gender: initialGender,
+		campus: initalCampus,
+	} = location.state || {}
+	const [name, setName] = useState(initialName || "")
+	const [email, setEmail] = useState(initialEmail || "")
+	const [mobile, setMobile] = useState(initialPhone || "")
+	const [gender, setGender] = useState(initialGender || "")
+	const [campus, setCampus] = useState(initalCampus || "")
 	const [checked, setChecked] = useState(false)
 	const [emailError, setEmailError] = useState("")
 	const [mobileError, setMobileError] = useState("")
 	const navigate = useNavigate()
+	const [isEditing, setIsEditing] = useState(!!location.state)
 
 	const validateEmail = (email) => {
 		const emailPattern =
@@ -96,7 +105,9 @@ const Mainform = () => {
 		<div className="outer-box">
 			<form onSubmit={handleSubmit}>
 				<div className="heading-div">
-					<h1 className="heading">Registration Form</h1>
+					<h2 className="heading">
+						{isEditing ? "Edit Details" : "Registration Form"}
+					</h2>
 				</div>
 				<div className="input-data">
 					<input
@@ -185,23 +196,29 @@ const Mainform = () => {
 					</select>
 				</div>
 
-				<label className="checkbox-label">
-					<input
-						type="checkbox"
-						name="updates"
-						className="checkbox-input"
-						checked={checked}
-						onChange={handleChecked}
-						required
-					/>
-					I agree to the terms and conditions
-				</label>
+				{isEditing ? (
+					""
+				) : (
+					<label className="checkbox-label">
+						<input
+							type="checkbox"
+							name="updates"
+							className="checkbox-input"
+							checked={checked}
+							onChange={handleChecked}
+							required
+						/>
+						I agree to the terms and conditions
+					</label>
+				)}
 
 				<div className="button-div">
-					<button className="submit" disabled={!checked}>
-						Submit
+					{isEditing && <button className="submit">Back</button>}
+					<button className="submit" disabled={isEditing ? false : !checked}>
+						{isEditing ? "Update" : "Submit"}
 					</button>
 				</div>
+
 				<div className="ellipsis-indicator">...</div>
 			</form>
 		</div>
