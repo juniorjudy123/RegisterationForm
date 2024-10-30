@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import EditPage from "./components/editPage/EditPage"
 import Successform from "./components/success/Successform"
 import "font-awesome/css/font-awesome.min.css"
+import TermsAndConditions from "./components/terms/TermsAndConditions"
 
 const appRouter = createBrowserRouter([
 	{
@@ -19,6 +20,10 @@ const appRouter = createBrowserRouter([
 	{
 		path: "/success",
 		element: <Successform />,
+	},
+	{
+		path: "/terms",
+		element: <TermsAndConditions />,
 	},
 ])
 

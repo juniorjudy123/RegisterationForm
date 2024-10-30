@@ -134,3 +134,9 @@ button:active {
 	margin-top: 10px; /* Space above */
 	opacity: 0.8; /* Slightly transparent */
 }
+
+.terms-link {
+	color: #007bff; /* Color for the link */
+	text-decoration: none; /* Remove underline */
+	font-weight: light; /* Make it bold */
+}

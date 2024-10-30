@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import "./mainformStyles.css"
 import ErrorMessage from "../errorMessage/ErrorMessage"
 import { URL } from "../constants/utils"
-import { useLocation, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 const Mainform = () => {
 	const location = useLocation()
@@ -187,7 +187,7 @@ const Mainform = () => {
 						required
 					>
 						<option value="" disabled>
-							Select a campus
+							Select
 						</option>
 						<option value="Ernakulam">Ernakulam</option>
 						<option value="Chennai">Chennai</option>
@@ -208,7 +208,10 @@ const Mainform = () => {
 							onChange={handleChecked}
 							required
 						/>
-						I agree to the terms and conditions
+						I agree to the terms and conditions .
+						<Link to="/terms" className="terms-link">
+							Terms
+						</Link>
 					</label>
 				)}
 
